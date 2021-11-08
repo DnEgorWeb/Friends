@@ -28,33 +28,29 @@ export const FriendFeedScreen = ({
   }
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={friends}
-        renderItem={({item: friend}) => (
-          <TouchableOpacity
-            onPress={() => handleFriendPress(friend)}
-            key={friend.id}
-            style={styles.friendContainer}>
-            <Image
-              source={friend.imageURL as ImageSourcePropType}
-              style={styles.friendImage}
-            />
-            <View>
-              <Text>
-                {friend.firstName} {friend.lastName}
-              </Text>
-              <Text>{friend.description}</Text>
-            </View>
-          </TouchableOpacity>
-        )}
-      />
-    </View>
+    <FlatList
+      data={friends}
+      style={styles.friendListContainer}
+      renderItem={({item: friend}) => (
+        <TouchableOpacity
+          onPress={() => handleFriendPress(friend)}
+          key={friend.id}
+          style={styles.friendContainer}>
+          <Image source={{uri: friend.imageURL}} style={styles.friendImage} />
+          <View style={styles.friendDataContainer}>
+            <Text style={styles.friendName}>
+              {friend.firstName} {friend.lastName}
+            </Text>
+            <Text style={styles.friendDescription}>{friend.description}</Text>
+          </View>
+        </TouchableOpacity>
+      )}
+    />
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  friendListContainer: {
     flex: 1,
     backgroundColor: 'lightgrey',
   },
@@ -65,5 +61,15 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
+  },
+  friendDataContainer: {
+    marginLeft: 15,
+  },
+  friendName: {
+    fontSize: 16,
+  },
+  friendDescription: {
+    fontSize: 14,
+    color: 'lightgrey',
   },
 });
