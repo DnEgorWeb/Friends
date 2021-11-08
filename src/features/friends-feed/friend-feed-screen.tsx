@@ -31,6 +31,7 @@ export const FriendFeedScreen = ({
     <FlatList
       data={friends}
       style={styles.friendListContainer}
+      ItemSeparatorComponent={() => <View style={styles.listSeparator} />}
       renderItem={({item: friend}) => (
         <TouchableOpacity
           onPress={() => handleFriendPress(friend)}
@@ -51,8 +52,10 @@ export const FriendFeedScreen = ({
 
 const styles = StyleSheet.create({
   friendListContainer: {
-    flex: 1,
-    backgroundColor: 'lightgrey',
+    flexGrow: 1,
+    backgroundColor: '#efefef',
+    paddingHorizontal: 20,
+    paddingVertical: 20,
   },
   friendContainer: {
     flexDirection: 'row',
@@ -63,13 +66,19 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   friendDataContainer: {
-    marginLeft: 15,
+    marginLeft: 25,
+    paddingTop: 5,
+    flex: 1,
   },
   friendName: {
     fontSize: 16,
   },
   friendDescription: {
     fontSize: 14,
-    color: 'lightgrey',
+    color: 'grey',
+    marginTop: 5,
+  },
+  listSeparator: {
+    height: 20,
   },
 });
