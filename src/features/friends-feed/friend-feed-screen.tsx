@@ -1,37 +1,57 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {
   StyleSheet,
   View,
   Image,
   Text,
-  ImageSourcePropType,
   FlatList,
   TouchableOpacity,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 
 import {Friend} from './friend';
 
 type Props = {
-  friends: Friend[];
+  friends: Friend[] | null;
   isLoading: boolean;
+  loadingError: string | null;
   handleFriendPress: (friend: Friend) => void;
+  handleFriendsReload: () => void;
 };
 
 export const FriendFeedScreen = ({
   friends,
   isLoading,
+  loadingError,
   handleFriendPress,
+  handleFriendsReload,
 }: Props) => {
-  if (isLoading) {
+  const loadedFriends = useRef(false);
+
+  useEffect(() => {
+    if (loadingError !== null) {
+      Alert.alert(loadingError);
+    }
+  }, [loadingError]);
+
+  useEffect(() => {
+    if (friends !== null) {
+      loadedFriends.current = true;
+    }
+  }, [friends]);
+
+  if (isLoading && !loadedFriends) {
     return <ActivityIndicator />;
   }
 
   return (
     <FlatList
-      data={friends}
+      data={friends ?? []}
       style={styles.friendListContainer}
       ItemSeparatorComponent={() => <View style={styles.listSeparator} />}
+      onRefresh={handleFriendsReload}
+      refreshing={isLoading}
       renderItem={({item: friend}) => (
         <TouchableOpacity
           onPress={() => handleFriendPress(friend)}
@@ -55,7 +75,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     backgroundColor: '#efefef',
     paddingHorizontal: 20,
-    paddingVertical: 20,
   },
   friendContainer: {
     flexDirection: 'row',
