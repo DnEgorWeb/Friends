@@ -4,4 +4,6 @@ export type Friend = {
   lastName: string;
   imageURL: string;
   description: string;
+  gender: string;
+  numberOfEpisodes: number;
 };
