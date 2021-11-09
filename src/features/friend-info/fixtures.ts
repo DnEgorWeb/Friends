@@ -1,0 +1,58 @@
+import {Friend} from './domain/friend';
+
+export const FRIENDS_MAP: Record<number, Friend> = {
+  0: {
+    id: 0,
+    firstName: 'Monica',
+    lastName: 'Geller',
+    imageURL: 'https://picsum.photos/200',
+    description: "She likes when it's clean. Loves cooking and Chandler Bing.",
+    gender: 'female',
+    numberOfEpisodes: 200,
+  },
+  1: {
+    id: 1,
+    firstName: 'Rachel',
+    lastName: 'Green',
+    imageURL: 'https://picsum.photos/200',
+    description: 'She hates being a waitress. She loves fashion and Ross.',
+    gender: 'female',
+    numberOfEpisodes: 199,
+  },
+  2: {
+    id: 2,
+    firstName: 'Ross',
+    lastName: 'Geller',
+    imageURL: 'https://picsum.photos/200',
+    description: 'Ross just loves dinosaurs.',
+    gender: 'male',
+    numberOfEpisodes: 205,
+  },
+  3: {
+    id: 3,
+    firstName: 'Joey',
+    lastName: 'Tribbiani',
+    imageURL: 'https://picsum.photos/200',
+    description: "Joey can't live without lunch.",
+    gender: 'male',
+    numberOfEpisodes: 218,
+  },
+  4: {
+    id: 4,
+    firstName: 'Chandler',
+    lastName: 'Bing',
+    imageURL: 'https://picsum.photos/200',
+    description: 'Joke, another joke. One more.',
+    gender: 'male',
+    numberOfEpisodes: 220,
+  },
+  5: {
+    id: 5,
+    firstName: 'Phoebe',
+    lastName: 'Buffay',
+    imageURL: 'https://picsum.photos/200',
+    description: 'Smelly caaaat, smelly cat...',
+    gender: 'female',
+    numberOfEpisodes: 182,
+  },
+};
