@@ -10,7 +10,7 @@ import {
   Alert,
 } from 'react-native';
 
-import {Friend} from './friend';
+import {Friend} from '../domain/friend';
 
 type Props = {
   friends: Friend[] | null;

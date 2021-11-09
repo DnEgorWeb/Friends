@@ -6,8 +6,8 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import {FriendFeedContainer} from './src/features/friends-feed/friend-feed-container';
-import {FriendsRemoteAPI} from './src/features/friends-feed/friends-remote-api';
+import {FriendFeedContainer} from './src/features/friends-feed/view/friend-feed-container';
+import {FriendsRemoteAPI} from './src/features/friends-feed/friends-api/friends-remote-api';
 
 const friendsRemoteAPI = new FriendsRemoteAPI();
 
@@ -17,7 +17,12 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <FriendFeedContainer api={friendsRemoteAPI} openFriend={() => {}} />
+      <FriendFeedContainer
+        getFriends={friendsRemoteAPI.getFriends}
+        openFriend={() => {
+          throw new Error('Not Implemented');
+        }}
+      />
     </SafeAreaView>
   );
 };
