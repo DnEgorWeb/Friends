@@ -6,6 +6,8 @@ type Props = {
   lastName: string;
   imageURL: string;
   bio: string;
+  episodesCount: number;
+  sex: string;
 };
 
 export const FriendInfoScreen = ({
@@ -13,6 +15,8 @@ export const FriendInfoScreen = ({
   lastName,
   imageURL,
   bio,
+  episodesCount,
+  sex,
 }: Props) => {
   return (
     <View style={styles.container}>
@@ -21,6 +25,8 @@ export const FriendInfoScreen = ({
         {firstName} {lastName}
       </Text>
       <Text style={styles.friendBio}>{bio}</Text>
+      <Text style={styles.friendNumberOfEpisodes}>{episodesCount}</Text>
+      <Text style={styles.friendSex}>{sex}</Text>
     </View>
   );
 };
@@ -42,6 +48,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   friendBio: {
+    fontSize: 14,
+    color: 'grey',
+    marginTop: 5,
+  },
+  friendNumberOfEpisodes: {
+    fontSize: 14,
+    color: 'grey',
+    marginTop: 5,
+  },
+  friendSex: {
     fontSize: 14,
     color: 'grey',
     marginTop: 5,
