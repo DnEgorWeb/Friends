@@ -19,7 +19,8 @@ const App = () => {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <FriendFeedContainer
         getFriends={friendsRemoteAPI.getFriends}
-        openFriend={() => {
+        openFriend={(id: number) => {
+          console.log(id);
           throw new Error('Not Implemented');
         }}
       />

@@ -10,13 +10,18 @@ import {
   Alert,
 } from 'react-native';
 
-import {Friend} from '../domain/friend';
+export type FriendData = {
+  id: number;
+  name: string;
+  imageURL: string;
+  description: string;
+};
 
 type Props = {
-  friends: Friend[] | null;
+  friends: Array<FriendData> | null;
   isLoading: boolean;
   loadingError: string | null;
-  handleFriendPress: (friend: Friend) => void;
+  handleFriendPress: (friend: FriendData) => void;
   handleFriendsReload: () => void;
 };
 
@@ -59,9 +64,7 @@ export const FriendFeedScreen = ({
           style={styles.friendContainer}>
           <Image source={{uri: friend.imageURL}} style={styles.friendImage} />
           <View style={styles.friendDataContainer}>
-            <Text style={styles.friendName}>
-              {friend.firstName} {friend.lastName}
-            </Text>
+            <Text style={styles.friendName}>{friend.name}</Text>
             <Text style={styles.friendDescription}>{friend.description}</Text>
           </View>
         </TouchableOpacity>
