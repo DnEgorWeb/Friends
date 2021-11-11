@@ -1,37 +1,25 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  useColorScheme,
-  StyleSheet,
-} from 'react-native';
+import {StatusBar, useColorScheme} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
-import {FriendFeedContainer} from './src/features/friends-feed/view/friend-feed-container';
 import {FriendsRemoteAPI} from './src/features/friends-feed/friends-api/friends-remote-api';
+import {FriendRemoteAPI} from './src/features/friend-info/friend-api/friend-remote-api';
+import {createFriendsStack} from './src/features/navigation/friends/friends-stack';
 
 const friendsRemoteAPI = new FriendsRemoteAPI();
+const friendRemoteAPI = new FriendRemoteAPI();
+
+const friendsStack = createFriendsStack(friendsRemoteAPI, friendRemoteAPI);
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <SafeAreaView style={styles.container}>
+    <NavigationContainer>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <FriendFeedContainer
-        getFriends={friendsRemoteAPI.getFriends}
-        openFriend={(id: number) => {
-          console.log(id);
-          throw new Error('Not Implemented');
-        }}
-      />
-    </SafeAreaView>
+      {friendsStack}
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;

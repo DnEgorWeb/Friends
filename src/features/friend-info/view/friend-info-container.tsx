@@ -2,9 +2,11 @@ import React, {useEffect, useState, useCallback} from 'react';
 
 import {FriendInfoScreen, FriendData} from './friend-info-screen';
 import {Friend} from '../domain/friend';
+import {FriendResult} from '../use-case/get-friend-info';
 
 type Props = {
-  getFriend: () => Promise<Friend>;
+  friendId: number;
+  getFriend: (id: number) => Promise<FriendResult>;
 };
 
 const mapFriendsToFriendsUIData = (friend: Friend): FriendData => ({
@@ -15,16 +17,16 @@ const mapFriendsToFriendsUIData = (friend: Friend): FriendData => ({
   sex: friend.gender,
 });
 
-export const FriendInfoContainer = ({getFriend}: Props) => {
+export const FriendInfoContainer = ({friendId, getFriend}: Props) => {
   const [friendLoading, setFriendLoading] = useState(false);
   const [friend, setFriend] = useState<FriendData | null>(null);
   const [friendError, setFriendError] = useState<string | null>(null);
 
   const loadFriend = useCallback(() => {
     setFriendLoading(true);
-    getFriend()
+    getFriend(friendId)
       .then(friendResult => {
-        const friendsData = mapFriendsToFriendsUIData(friendResult);
+        const friendsData = mapFriendsToFriendsUIData(friendResult as Friend);
         setFriend(friendsData);
       })
       .catch(err => {
@@ -32,7 +34,7 @@ export const FriendInfoContainer = ({getFriend}: Props) => {
         setFriend(null);
       })
       .finally(() => setFriendLoading(false));
-  }, [getFriend]);
+  }, [getFriend, friendId]);
 
   useEffect(() => {
     loadFriend();
@@ -40,11 +42,11 @@ export const FriendInfoContainer = ({getFriend}: Props) => {
 
   return (
     <FriendInfoScreen
-      name={(friend as FriendData).name}
-      bio={(friend as FriendData).bio}
-      episodesCount={(friend as FriendData).episodesCount}
-      imageURL={(friend as FriendData).imageURL}
-      sex={(friend as FriendData).sex}
+      name={friend?.name}
+      bio={friend?.bio}
+      episodesCount={friend?.episodesCount}
+      imageURL={friend?.imageURL}
+      sex={friend?.sex}
       loading={friendLoading}
       loadingError={friendError}
     />

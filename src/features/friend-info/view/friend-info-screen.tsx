@@ -9,11 +9,11 @@ import {
 } from 'react-native';
 
 export type FriendData = {
-  name: string;
-  imageURL: string;
-  bio: string;
-  episodesCount: number;
-  sex: string;
+  name?: string;
+  imageURL?: string;
+  bio?: string;
+  episodesCount?: number;
+  sex?: string;
 };
 
 export type FriendScreenProps = FriendData & {
