@@ -1,29 +1,49 @@
-import React from 'react';
-import {View, StyleSheet, Image, Text} from 'react-native';
+import React, {useEffect} from 'react';
+import {
+  Alert,
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  ActivityIndicator,
+} from 'react-native';
 
-type Props = {
-  firstName: string;
-  lastName: string;
+export type FriendData = {
+  name: string;
   imageURL: string;
   bio: string;
   episodesCount: number;
   sex: string;
 };
 
+export type FriendScreenProps = FriendData & {
+  loading: boolean;
+  loadingError: string | null;
+};
+
 export const FriendInfoScreen = ({
-  firstName,
-  lastName,
+  loading,
+  loadingError,
+  name,
   imageURL,
   bio,
   episodesCount,
   sex,
-}: Props) => {
+}: FriendScreenProps) => {
+  useEffect(() => {
+    if (loadingError !== null) {
+      Alert.alert(loadingError);
+    }
+  }, [loadingError]);
+
+  if (loading) {
+    return <ActivityIndicator />;
+  }
+
   return (
     <View style={styles.container}>
       <Image source={{uri: imageURL}} style={styles.friendImage} />
-      <Text style={styles.friendName}>
-        {firstName} {lastName}
-      </Text>
+      <Text style={styles.friendName}>{name}</Text>
       <Text style={styles.friendBio}>{bio}</Text>
       <Text style={styles.friendNumberOfEpisodes}>{episodesCount}</Text>
       <Text style={styles.friendSex}>{sex}</Text>
