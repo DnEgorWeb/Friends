@@ -1,7 +1,7 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {FriendsAPI} from '../../friends-feed/friends-api/friends-api';
+import {FriendsAPI} from '../../friends-feed/use-case/get-friends';
 import {FriendAPI} from '../../friend-info/friend-api/friend-api';
 import {FriendsFeedScreen} from './friends-feed-screen';
 import {FriendInfoScreen} from './friend-info-screen';

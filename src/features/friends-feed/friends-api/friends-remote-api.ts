@@ -1,6 +1,6 @@
-import {FriendsAPI} from './friends-api';
 import {FRIENDS} from '../fixtures';
 import {Friend} from '../domain/friend';
+import {FriendsAPI} from '../use-case/get-friends';
 
 export class FriendsRemoteAPI extends FriendsAPI {
   // Immitates network request. Sometimes throws connection error.
