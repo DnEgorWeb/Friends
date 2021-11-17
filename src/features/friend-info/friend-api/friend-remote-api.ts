@@ -1,4 +1,4 @@
-import {FriendAPI} from './friend-api';
+import {FriendAPI} from '../use-case/get-friend-info';
 import {FriendError} from '../use-case/friend-error';
 import {FriendResult} from '../use-case/get-friend-info';
 import {FRIENDS_MAP} from '../fixtures';
