@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {FriendsRemoteAPI} from './src/features/friends-feed/friends-api/friends-remote-api';
 import {FriendRemoteAPI} from './src/features/friend-info/friend-api/friend-remote-api';
-import {createFriendsStack} from './src/features/navigation/friends/friends-stack';
+import {createFriendsStack} from './src/core/navigation/friends-stack';
 
 const friendsRemoteAPI = new FriendsRemoteAPI();
 const friendRemoteAPI = new FriendRemoteAPI();
