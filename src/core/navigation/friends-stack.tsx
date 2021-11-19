@@ -16,6 +16,7 @@ export function createFriendsStack(
   friendAPI: FriendAPI,
 ) {
   const FriendsStack = createNativeStackNavigator<RootStackParamList>();
+
   return (
     <FriendsStack.Navigator>
       <FriendsStack.Screen name="Friends Feed">

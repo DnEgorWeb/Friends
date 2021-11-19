@@ -1,4 +1,4 @@
-import {Friend} from './domain/friend';
+import {Friend} from '../../features/friends-feed/domain/friend';
 
 export const FRIENDS: Friend[] = [
   {

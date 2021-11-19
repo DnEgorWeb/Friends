@@ -28,9 +28,10 @@ export const FriendFeedContainer = ({getFriends, openFriend}: Props) => {
       .then(friendsResult => {
         const friendsData = mapFriendsToFriendsUIData(friendsResult);
         setFriends(friendsData);
+        setFriendsError(null);
       })
       .catch(err => {
-        setFriendsError(err);
+        setFriendsError(err.toString());
         setFriends(null);
       })
       .finally(() => setFriendsLoading(false));
