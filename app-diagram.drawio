@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-11-19T16:06:45.486Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15" etag="PBrM80QZiGm0Y359bm1E" version="15.8.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-19T16:12:53.510Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15" etag="5whxxOdNBaFXUErfKjlM" version="15.8.2" type="github">
   <diagram id="FGXTsAvwAVlnQU3tgq2P" name="Page-1">
-    <mxGraphModel dx="1376" dy="1119" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="963" dy="755" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -92,12 +92,12 @@
         <mxCell id="NMhqv9w3vJZBCxcQdrqS-5" value="&lt;font color=&quot;#0000ff&quot;&gt;Friend Result&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FF3333;strokeColor=#0000FF;" parent="1" vertex="1">
           <mxGeometry x="640" y="200" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="NMhqv9w3vJZBCxcQdrqS-6" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontColor=#00FF00;strokeWidth=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#0000FF;" parent="1" target="NMhqv9w3vJZBCxcQdrqS-3" edge="1">
+        <mxCell id="NMhqv9w3vJZBCxcQdrqS-6" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontColor=#00FF00;strokeWidth=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#0000FF;" parent="1" target="NMhqv9w3vJZBCxcQdrqS-3" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="520" y="200" as="sourcePoint" />
             <mxPoint x="520" y="160" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="520" y="140" />
+              <mxPoint x="520" y="150" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -177,13 +177,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="NMhqv9w3vJZBCxcQdrqS-23" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontColor=#00FF00;strokeWidth=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF00FF;" parent="1" edge="1" source="NMhqv9w3vJZBCxcQdrqS-17">
+        <mxCell id="NMhqv9w3vJZBCxcQdrqS-23" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;fontColor=#00FF00;strokeWidth=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF00FF;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" edge="1" target="NMhqv9w3vJZBCxcQdrqS-3" source="NMhqv9w3vJZBCxcQdrqS-17">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="540" y="460" as="sourcePoint" />
             <mxPoint x="560" y="140" as="targetPoint" />
             <Array as="points">
               <mxPoint x="460" y="380" />
-              <mxPoint x="460" y="140" />
+              <mxPoint x="460" y="130" />
             </Array>
           </mxGeometry>
         </mxCell>
